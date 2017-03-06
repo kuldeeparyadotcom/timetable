@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 //Refer https://github.com/AngularClass/angular2-webpack-starter/commit/d9ea3fb4b57a6d7c320900b83a76e388546b56c6
 
 @Component({
-  selector: 'my-app',
+  selector: 'timetable-header',
   moduleId: module.id,
-  templateUrl: './app.component.html'
+  templateUrl: './timetable-header.component.html'
 })
-export class AppComponent  { 
-  message = 'Timetable' ;
+export class TimetableHeaderComponent  {
+  timetable_header = 'assets/img/timetable_header.jpg';
 }
