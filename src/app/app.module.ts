@@ -5,6 +5,7 @@ import { AppComponent }  from './app.component';
 import { TimetableTitleComponent } from './timetable-title/timetable-title.component'
 import { TimetableHeaderComponent } from './timetable-header/timetable-header.component'
 import { TimetableWishComponent } from './timetable-wish/timetable-wish.component'
+import { TimetableItemComponent } from './timetable-item/timetable-item.component'
 
 @NgModule({
   imports:      [ BrowserModule ],
@@ -12,7 +13,8 @@ import { TimetableWishComponent } from './timetable-wish/timetable-wish.componen
     AppComponent, 
     TimetableTitleComponent, 
     TimetableHeaderComponent,
-    TimetableWishComponent 
+    TimetableWishComponent,
+    TimetableItemComponent
     ],
   bootstrap:    [ AppComponent ]
 })
