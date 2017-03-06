@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TimetableItem} from "./timetable-item.model";
 
 //moduleID in Component decorator plays a crucial role
 //Without this defined, templateUrl throws 404 on ./app.component.html
@@ -13,8 +14,6 @@ import { Component } from '@angular/core';
   templateUrl: './timetable-item.component.html'
 })
 export class TimetableItemComponent  { 
-  start_time = '9:00 AM IST' ;
-  end_time = '12:00 AM IST' ;
-  description = 'Slot one of studies' ;
-  status = 'success' ; //TO-DO - Datewise tracking
+    //@Input() timetableItem = new TimetableItem("9:00 AM", "12:00 AM", "Slot one of studies", "success") ;
+    @Input() timetableItem: TimetableItem ;
 }
