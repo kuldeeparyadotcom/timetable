@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TimetableItemService } from "./timetable-item/timetable-item.service" ;
 import { TimetableWishService } from "./timetable-wish/timetable-wish.service" ;
+import { TimetableTipService } from "./timetable-tip/timetable-tip.service" ;
 
 //moduleID in Component decorator plays a crucial role
 //Without this defined, templateUrl throws 404 on ./app.component.html
@@ -14,7 +15,8 @@ import { TimetableWishService } from "./timetable-wish/timetable-wish.service" ;
   moduleId: module.id,
   templateUrl: './app.component.html',
     providers: [ TimetableItemService,
-                 TimetableWishService
+                 TimetableWishService,
+                 TimetableTipService
             ]
 })
 export class AppComponent  { 

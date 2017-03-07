@@ -8,6 +8,8 @@ import { TimetableWishComponent } from './timetable-wish/timetable-wish.componen
 import { TimetableWisheslistComponent } from './timetable-wish/timetable-wisheslist.component'
 import { TimetableItemComponent } from './timetable-item/timetable-item.component'
 import { TimetableItemslistComponent } from './timetable-item/timetable-itemslist.component'
+import { TimetableTipComponent } from './timetable-tip/timetable-tip.component'
+import { TimetableTipslistComponent } from './timetable-tip/timetable-tipslist.component'
 
 @NgModule({
   imports:      [ BrowserModule ],
@@ -18,7 +20,9 @@ import { TimetableItemslistComponent } from './timetable-item/timetable-itemslis
     TimetableWishComponent,
     TimetableWisheslistComponent,
     TimetableItemComponent,
-    TimetableItemslistComponent
+    TimetableItemslistComponent,
+    TimetableTipComponent,
+    TimetableTipslistComponent
     ],
   bootstrap:    [ AppComponent ]
 })
