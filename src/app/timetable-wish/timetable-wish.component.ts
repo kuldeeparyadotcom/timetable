@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TimetableWish} from "./timetable-wish.model";
 
 //moduleID in Component decorator plays a crucial role
 //Without this defined, templateUrl throws 404 on ./app.component.html
@@ -12,7 +13,8 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   templateUrl: './timetable-wish.component.html'
 })
-export class TimetableWishComponent  { 
-  wish_message = 'You can do it' ;
-  wish_by = 'Tina';
+export class TimetableWishComponent  {
+  @Input() timetableWish: TimetableWish ;
+  //timetableWish: TimetableWish = new TimetableWish("You can do it!", "Tina");
+
 }
