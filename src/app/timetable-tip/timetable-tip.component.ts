@@ -11,7 +11,15 @@ import { TimetableTip} from "./timetable-tip.model";
 @Component({
   selector: 'timetable-tip',
   moduleId: module.id,
-  templateUrl: './timetable-tip.component.html'
+  templateUrl: './timetable-tip.component.html',
+    styles: [`
+      .config {
+        display: inline-block;
+        text-align: right;
+        font-size: 12px;
+        font-style: italic;
+      }
+  `]
 })
 export class TimetableTipComponent  { 
     //timetableTip = new TimetableTip("Drink good amount of water") ;

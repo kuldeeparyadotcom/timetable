@@ -1,5 +1,9 @@
 <div>
-    <p [class]="timetableTip.tip_color">
-        {{ timetableTip.tip_description }}
-    </p>
+    <div [class]="timetableTip.tip_color">
+             {{ timetableTip.tip_description }}
+             <div class="config col-sm-offset-1 pull-right">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+            </div>
+    </div>
 </div>

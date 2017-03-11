@@ -11,7 +11,15 @@ import { TimetableItem} from "./timetable-item.model";
 @Component({
   selector: 'timetable-item',
   moduleId: module.id,
-  templateUrl: './timetable-item.component.html'
+  templateUrl: './timetable-item.component.html',
+  styles: [`
+      .config {
+        display: inline-block;
+        text-align: right;
+        font-size: 12px;
+        font-style: italic;
+      }
+  `]
 })
 export class TimetableItemComponent  { 
     //@Input() timetableItem = new TimetableItem("9:00 AM", "12:00 AM", "Slot one of studies", "success") ;

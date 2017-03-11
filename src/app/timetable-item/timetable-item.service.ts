@@ -7,9 +7,9 @@ export class TimetableItemService {
     */
 
     //Only for testing - add some items to array timetable_items
-    item1 = new TimetableItem("09:30 AM", "12:30 PM", "Polity", "success");
-    item2 = new TimetableItem("01:30 PM", "02:30 PM", "Current Affairs", "warning");
-    item3 = new TimetableItem("02:30 PM", "03:30 PM", "Environment", "success");
+    item1 = new TimetableItem("09:30 AM", "12:30 PM", "Polity", "bg-success");
+    item2 = new TimetableItem("01:30 PM", "02:30 PM", "Current Affairs", "bg-warning");
+    item3 = new TimetableItem("02:30 PM", "03:30 PM", "Environment", "bg-success");
     
     private timetable_items: TimetableItem[] = [this.item1, this.item2, this.item3];
 
