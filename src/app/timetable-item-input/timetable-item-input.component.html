@@ -1,0 +1,40 @@
+<div class="col-sm-7" style="background-color:white;">
+    <article class="panel panel-default">
+        <div class="panel-body" >
+            <form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                                <!--<label for="start_time">Start Time</label>-->
+                                <input 
+                                    type="text" 
+                                    id="start_time" 
+                                    placeholder="00:00 AM" 
+                                    class="form-control"
+                                    ngModel
+                                    name="start_time"
+                                    required>
+   
+                                <!--<label for="end_time">End Time</label>-->
+                                <input 
+                                    type="text" 
+                                    id="end_time" 
+                                    placeholder="00:00 AM" 
+                                    class="form-control"
+                                    ngModel
+                                    name="end_time"
+                                    required>
+      
+                                <!--<label for="description">Description</label>-->
+                                <input 
+                                    type="text" 
+                                    id="description" 
+                                    placeholder="Task Details" 
+                                    class="form-control"
+                                    ngModel
+                                    name="description"
+                                    required>
+                </div>
+                <button class="btn btn-primary pull-right" type="submit">Save</button>
+            </form>
+            </div>
+    </article>
+</div>

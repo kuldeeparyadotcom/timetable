@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { TimetableTitleComponent } from './timetable-title/timetable-title.component'
@@ -10,9 +11,10 @@ import { TimetableItemComponent } from './timetable-item/timetable-item.componen
 import { TimetableItemslistComponent } from './timetable-item/timetable-itemslist.component'
 import { TimetableTipComponent } from './timetable-tip/timetable-tip.component'
 import { TimetableTipslistComponent } from './timetable-tip/timetable-tipslist.component'
+import {TimetableItemInputComponent} from './timetable-item-input/timetable-item-input.component'
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
     AppComponent, 
     TimetableTitleComponent, 
@@ -22,7 +24,8 @@ import { TimetableTipslistComponent } from './timetable-tip/timetable-tipslist.c
     TimetableItemComponent,
     TimetableItemslistComponent,
     TimetableTipComponent,
-    TimetableTipslistComponent
+    TimetableTipslistComponent,
+    TimetableItemInputComponent
     ],
   bootstrap:    [ AppComponent ]
 })
