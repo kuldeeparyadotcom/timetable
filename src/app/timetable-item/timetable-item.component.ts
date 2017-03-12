@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TimetableItem} from "./timetable-item.model";
+
+import { TimetableItemService } from './timetable-item.service';
 
 //moduleID in Component decorator plays a crucial role
 //Without this defined, templateUrl throws 404 on ./app.component.html
@@ -22,6 +24,19 @@ import { TimetableItem} from "./timetable-item.model";
   `]
 })
 export class TimetableItemComponent  { 
+
+  constructor(private timetableItemService: TimetableItemService) {}
     //@Input() timetableItem = new TimetableItem("9:00 AM", "12:00 AM", "Slot one of studies", "success") ;
     @Input() timetableItem: TimetableItem ;
+    @Output() editClicked = new EventEmitter<String>();
+
+    onEdit() {
+        // alert("Edit Item");
+        this.editClicked.emit('A New Value');
+    }
+
+    onDelete() {
+        // alert("Delete Item");
+        this.timetableItemService.deleteTimetableItem(this.timetableItem);
+    }
 }
