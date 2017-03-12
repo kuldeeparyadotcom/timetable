@@ -14,8 +14,10 @@ import { TimetableTipslistComponent } from './timetable-tip/timetable-tipslist.c
 import {TimetableItemInputComponent} from './timetable-item-input/timetable-item-input.component'
 import { TimetableItemsTipsComponent} from './timetable-items-tips/timetable-items-tips.component'
 
+import { routing } from './app.routing'
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, routing],
   declarations: [ 
     AppComponent, 
     TimetableTitleComponent, 
