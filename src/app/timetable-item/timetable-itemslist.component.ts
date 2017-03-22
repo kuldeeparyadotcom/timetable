@@ -13,7 +13,11 @@ export class TimetableItemslistComponent implements OnInit{
         private timetableItems: TimetableItem[];
 
         ngOnInit() {
-            this.timetableItems = this.timetableItemService.getTimetableItems();
+            this.timetableItemService.getTimetableItems().subscribe(
+              (timetableitems: TimetableItem[]) => {
+                this.timetableItems = timetableitems;
+              }
+            );
         }
 
 }
