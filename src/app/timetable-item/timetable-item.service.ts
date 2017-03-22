@@ -48,7 +48,7 @@ export class TimetableItemService {
                 const timetableitems = response.json();
                 let transformedTimetableitems: TimetableItem[] = [];
                 for (let timetableitem of timetableitems) {
-                    transformedTimetableitems.push(new TimetableItem(timetableitem.start_time, timetableitem.end_time, timetableitem.description, timetableitem.status));
+                    transformedTimetableitems.push(new TimetableItem(timetableitem.start_time, timetableitem.end_time, timetableitem.description, timetableitem.status, timetableitem._id));
                 }
                 this.timetable_items = transformedTimetableitems;
                 console.log(transformedTimetableitems);
@@ -59,5 +59,9 @@ export class TimetableItemService {
 
     deleteTimetableItem(timetableItem: TimetableItem) {
         this.timetable_items.splice(this.timetable_items.indexOf(timetableItem),1);
+        //Remove from database as well
+        return this.http.delete('http://192.168.1.69:7018/timetableitem/' + timetableItem.timetableitemId)
+        .map((response: Response) => response.json())
+        .catch((error: Response) => Observable.throw(error.json()));
     }
 }

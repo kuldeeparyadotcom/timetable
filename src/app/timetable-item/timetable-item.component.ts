@@ -37,6 +37,10 @@ export class TimetableItemComponent  {
 
     onDelete() {
         // alert("Delete Item");
-        this.timetableItemService.deleteTimetableItem(this.timetableItem);
+        // this.timetableItemService.deleteTimetableItem(this.timetableItem);
+        this.timetableItemService.deleteTimetableItem(this.timetableItem)
+            .subscribe(
+                result => console.log(result)
+            );
     }
 }
