@@ -1,13 +1,10 @@
 import { TimetableItem } from "./timetable-item.model";
 import { Http, Response, Headers } from '@angular/http';
-import { Injectable } from '@angular/core';
-// import 'rxjs/Rx';
-// import { Observable } from "rxjs";
-
 import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class TimetableItemService {
@@ -26,15 +23,17 @@ export class TimetableItemService {
     constructor(private http: Http) {}
 
     addTimetableItem(timetableItem: TimetableItem) {
-        this.timetable_items.push(timetableItem);
+        // this.timetable_items.push(timetableItem);
         //Logic to get data from Mongo DB Database
         const body = JSON.stringify(timetableItem);
-        const headers = new Headers({'Content-Type': 'application/json'});
+        const headers = new Headers({
+            'Content-Type': 'application/json'
+        });
 
-         return this.http.post('http://192.168.1.69:7018/timetableitem', body, {headers: headers})
+         return this.http.post('http://107.21.195.63:7018/timetableitem', body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
-                const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status);
+                const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
                 this.timetable_items.push(timetableitem);
                 return timetableitem;
             })
@@ -43,7 +42,7 @@ export class TimetableItemService {
 
     getTimetableItems() {
         // return this.timetable_items;
-        return this.http.get('http://192.168.1.69:7018/timetableitems')
+        return this.http.get('http://107.21.195.63:7018/timetableitems')
             .map((response: Response) => {
                 const timetableitems = response.json();
                 let transformedTimetableitems: TimetableItem[] = [];
@@ -60,7 +59,7 @@ export class TimetableItemService {
     deleteTimetableItem(timetableItem: TimetableItem) {
         this.timetable_items.splice(this.timetable_items.indexOf(timetableItem),1);
         //Remove from database as well
-        return this.http.delete('http://192.168.1.69:7018/timetableitem/' + timetableItem.timetableitemId)
+        return this.http.delete('http://107.21.195.63:7018/timetableitem/' + timetableItem.timetableitemId)
         .map((response: Response) => response.json())
         .catch((error: Response) => Observable.throw(error.json()));
     }
