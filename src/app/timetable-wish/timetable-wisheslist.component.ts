@@ -10,7 +10,8 @@ import { TimetableWish } from "./timetable-wish.model"
 export class TimetableWisheslistComponent implements OnInit{ 
   constructor(private timetableWishService: TimetableWishService) {}
         
-        private timetableWishes: TimetableWish[];
+        // private timetableWishes: TimetableWish[];
+        timetableWishes: TimetableWish[];
 
         ngOnInit() {
             this.timetableWishes = this.timetableWishService.getTimetableWishes();

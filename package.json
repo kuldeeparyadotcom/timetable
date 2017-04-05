@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "timetable",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
@@ -26,11 +26,13 @@
   "dependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
+    "@angular/compiler-cli": "^4.0.1",
     "@angular/core": "~2.4.0",
     "@angular/forms": "~2.4.0",
     "@angular/http": "~2.4.0",
     "@angular/platform-browser": "~2.4.0",
     "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/platform-server": "^4.0.1",
     "@angular/router": "~3.4.0",
     "angular-in-memory-web-api": "~0.2.4",
     "core-js": "^2.4.1",
@@ -39,23 +41,28 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "concurrently": "^3.2.0",
-    "lite-server": "^2.2.2",
-    "typescript": "~2.0.10",
+    "@types/jasmine": "2.5.36",
+    "@types/node": "^6.0.46",
     "canonical-path": "0.0.2",
-    "tslint": "^3.15.1",
-    "lodash": "^4.16.4",
+    "concurrently": "^3.2.0",
+    "http-server": "^0.9.0",
     "jasmine-core": "~2.4.1",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.2.2",
+    "lodash": "^4.16.4",
     "protractor": "~4.0.14",
     "rimraf": "^2.5.4",
+    "rollup": "^0.41.6",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "rxjs": "^5.3.0",
-    "@types/node": "^6.0.46",
-    "@types/jasmine": "2.5.36"
+    "tslint": "^3.15.1",
+    "typescript": "^2.2.2"
   },
   "repository": {}
 }

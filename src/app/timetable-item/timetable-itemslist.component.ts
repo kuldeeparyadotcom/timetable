@@ -10,7 +10,8 @@ import { TimetableItem } from "./timetable-item.model"
 export class TimetableItemslistComponent implements OnInit{ 
   constructor(private timetableItemService: TimetableItemService) {}
         
-        private timetableItems: TimetableItem[];
+        // private timetableItems: TimetableItem[];
+        timetableItems: TimetableItem[];
 
         ngOnInit() {
             this.timetableItemService.getTimetableItems().subscribe(

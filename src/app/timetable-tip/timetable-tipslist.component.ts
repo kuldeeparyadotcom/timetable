@@ -10,7 +10,8 @@ import { TimetableTip } from "./timetable-tip.model"
 export class TimetableTipslistComponent implements OnInit{ 
   constructor(private timetableTipService: TimetableTipService) {}
         
-        private timetableTips: TimetableTip[];
+        // private timetableTips: TimetableTip[];
+        timetableTips: TimetableTip[];
 
         ngOnInit() {
             this.timetableTips = this.timetableTipService.getTimetableTips();
