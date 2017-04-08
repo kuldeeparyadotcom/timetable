@@ -26,3 +26,24 @@ i.e. http://code.visualstudio.com
 Open your code directory i.e. /Users/KD/timetable and start modifying Angular 2 Quick Start Seed project.
 
 Thank You!
+
+
+Learning Resources
+http://stackoverflow.com/questions/38475460/angular-2-app-base-href-with-cordova-ios
+https://cordova.apache.org/docs/en/latest/guide/cli/index.html
+https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#compiling-aot
+https://angular.io/docs/ts/latest/guide/deployment.html
+https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#compiling-aot
+https://angular.io/docs/ts/latest/guide/deployment.html
+https://github.com/angular/angular/issues/12046
+http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#requirements-and-support
+https://developer.android.com/studio/install.html
+https://developer.android.com/studio/intro/update.html
+https://developer.android.com/studio/run/managing-avds.html
+https://developer.android.com/studio/run/emulator.html
+https://developer.android.com/studio/run/managing-avds.html#viewing
+https://gradle.org/install#with-the-gradle-wrapper
+https://brew.sh
+https://developer.android.com/studio/index.html#downloads
+https://github.com/unpkg/express-unpkg/issues/29
+
