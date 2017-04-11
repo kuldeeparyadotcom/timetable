@@ -1,4 +1,4 @@
-<div>
+<div *ngIf=(isUserLoggedIn)>
     <timetable-item [timetableItem]="item"
                     *ngFor="let item of timetableItems">
     </timetable-item>

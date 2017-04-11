@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { TimetableWish} from "./timetable-wish.model";
 
+import { TimetableAuthService } from "../timetable-auth/timetable-auth.service";
+
+
 //moduleID in Component decorator plays a crucial role
 //Without this defined, templateUrl throws 404 on ./app.component.html
 //https://github.com/mgechev/angular-seed/issues/628
@@ -14,6 +17,10 @@ import { TimetableWish} from "./timetable-wish.model";
   templateUrl: './timetable-wish.component.html'
 })
 export class TimetableWishComponent  {
+
+    constructor ( private timetableAuthService: TimetableAuthService ) {}
+    isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();
+
   @Input() timetableWish: TimetableWish ;
   //timetableWish: TimetableWish = new TimetableWish("You can do it!", "Tina");
 

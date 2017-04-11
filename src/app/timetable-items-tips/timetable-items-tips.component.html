@@ -1,5 +1,5 @@
 <timetable-item-input></timetable-item-input>
-<div class="row col-sm-12">
+<div class="row col-sm-12" *ngIf=(isUserLoggedIn)>
     <div class="col-sm-7" >
         <timetable-itemslist></timetable-itemslist>
     </div>

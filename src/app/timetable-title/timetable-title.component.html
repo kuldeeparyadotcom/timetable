@@ -1,9 +1,8 @@
 
-<div class="col-sm-12" style="background-color:white;">
+<div class="col-sm-12" style="background-color:white;" *ngIf=(isUserLoggedIn)>
     <h1> 
-        {{ timetable_title }} <small> {{ timetable_subtitle }} </small> 
+        {{ timetable_title }}
+        <small> {{ timetable_subtitle }} </small>
+        <hr>
     </h1>
-</div>
-<div class="col-sm-12">
-  <p>Bookmark this page to view the <mark> live status </mark>of preparation.</p> 
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimetableItemService } from "./timetable-item.service" ;
 import { TimetableItem } from "./timetable-item.model"
+import { TimetableAuthService } from "../timetable-auth/timetable-auth.service";
 
 @Component({
   selector: 'timetable-itemslist',
@@ -8,7 +9,11 @@ import { TimetableItem } from "./timetable-item.model"
   templateUrl: './timetable-itemslist.component.html'
 })
 export class TimetableItemslistComponent implements OnInit{ 
-  constructor(private timetableItemService: TimetableItemService) {}
+  constructor(private timetableItemService: TimetableItemService, 
+  private timetableAuthService: TimetableAuthService
+  ) {}
+  
+  isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();
         
         // private timetableItems: TimetableItem[];
         timetableItems: TimetableItem[];

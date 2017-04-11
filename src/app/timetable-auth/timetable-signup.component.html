@@ -1,0 +1,43 @@
+<div *ngIf=(!isUserLoggedIn)>
+    <form class="form-signup" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h2 class="form-signup-heading">Sign Up!</h2>
+        <label for="inputFirstname" class="sr-only">First Name</label>
+        <input 
+            type="firstname" 
+            id="inputFirstname" 
+            class="form-control"
+            ngModel
+            name="firstname"
+            placeholder="First Name" 
+            required autofocus>
+        <label for="inputLastname" class="sr-only">Last Name</label>
+        <input 
+            type="lastname" 
+            id="inputLastname" 
+            class="form-control"
+            ngModel
+            name="lastname"
+            placeholder="Last Name" 
+            required>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input 
+            type="email" 
+            id="inputEmail" 
+            class="form-control"
+            ngModel
+            name="email"
+            placeholder="Email address" 
+            required>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input 
+            type="password" 
+            id="inputPassword" 
+            class="form-control"
+            ngModel
+            name="password"
+            placeholder="Password" 
+            required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign me up!</button>
+        <a [routerLink]="['/signin']" class="btn btn-link" role="button">Already Registered?</a>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-<div class="page-footer">
+<div class="page-footer" *ngIf=(isUserLoggedIn)>
     <div class="col-sm-12" style="background-color:white;" *ngIf="timetableWish">
         <blockquote>
             <p> {{ timetableWish.wish_message }} </p>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TimetableItem} from "../timetable-item/timetable-item.model"
 
 import { TimetableItemService } from "../timetable-item/timetable-item.service" ;
+import { TimetableAuthService} from "../timetable-auth/timetable-auth.service" ;
 
 import { NgForm } from '@angular/forms'
 
@@ -17,7 +18,11 @@ import { NgForm } from '@angular/forms'
 })
 export class TimetableItemInputComponent implements OnInit { 
 
-  constructor(private timetableItemService: TimetableItemService) {}
+  constructor(private timetableItemService: TimetableItemService,
+    private timetableAuthService: TimetableAuthService
+  ) {}
+
+  isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();
 
     // timetableItemInput = new TimetableItem("9:00 AM", "12:00 AM", "New Item to be added", "success") ;
 

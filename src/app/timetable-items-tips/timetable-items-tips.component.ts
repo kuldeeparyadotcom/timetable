@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TimetableItem} from "../timetable-item/timetable-item.model";
+import { TimetableAuthService} from "../timetable-auth/timetable-auth.service";
 
 @Component({
   selector: 'timetable-items-tips',
@@ -15,5 +16,7 @@ import { TimetableItem} from "../timetable-item/timetable-item.model";
   `]
 })
 export class TimetableItemsTipsComponent  { 
-    
+    constructor(private timetableAuthService: TimetableAuthService) {}  
+
+    isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();  
 }
