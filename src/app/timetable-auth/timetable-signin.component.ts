@@ -74,7 +74,7 @@ export class TimetableSigninComponent  {
       data => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userId', data.userId);
-        this.router.navigateByUrl('timetable');
+        this.router.navigateByUrl('/timetable');
       },
       error => console.error(error)
     );

@@ -16,6 +16,7 @@ import { TimetableItemsTipsComponent} from './timetable-items-tips/timetable-ite
 import { TimetableSigninComponent} from './timetable-auth/timetable-signin.component'
 import { TimetableSignupComponent } from './timetable-auth/timetable-signup.component'
 import { TimetableLogoutComponent } from './timetable-auth/timetable-logout.component'
+import { TimetableAuthComponent } from './timetable-auth/timetable-auth.component'
 import { HttpModule } from '@angular/http'
 
 import { routing } from './app.routing'
@@ -39,7 +40,8 @@ import { routing } from './app.routing'
     TimetableItemsTipsComponent,
     TimetableSigninComponent,
     TimetableSignupComponent,
-    TimetableLogoutComponent
+    TimetableLogoutComponent,
+    TimetableAuthComponent
     ],
   bootstrap:    [ AppComponent ]
 })

@@ -64,7 +64,7 @@ export class TimetableLogoutComponent implements OnInit {
     onSubmit(form: NgForm) {
       this.timetableAuthService.logoutTimetableUser();
       this.isUserLoggedIn = this.timetableAuthService.isUserLoggedIn(); 
-      this.router.navigateByUrl('signin');
+      this.router.navigateByUrl('/auth/signin');
 
   }
   ngOnInit() {

@@ -83,7 +83,7 @@ export class TimetableSignupComponent  {
     this.timetableAuthService.signupTimetableUser(timetableUser).subscribe(
       data => {
         console.log(data);
-        this.router.navigateByUrl('signin');
+        this.router.navigateByUrl('/auth/signin');
         },
       error => console.error(error)
     );
