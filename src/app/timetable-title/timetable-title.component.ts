@@ -14,10 +14,10 @@ export class TimetableTitleComponent implements OnInit {
 
   constructor(private timetableAuthService: TimetableAuthService) {}
 
-  @Input() isUserLoggedIn: boolean;
+  @Input() isUserLoggedIn: boolean = this.timetableAuthService.isUserLoggedIn();
   // isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();
 
-  timetable_title = 'Tips for Prelims 2017' ;
+  timetable_title = 'Stay Focused, Stay Blessed!' ;
   timetable_subtitle = 'Stay Focused, Stay Blessed!' ;
 
   ngOnInit() {

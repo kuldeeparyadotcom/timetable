@@ -18,5 +18,5 @@ import { TimetableAuthService} from "../timetable-auth/timetable-auth.service";
 export class TimetableItemsTipsComponent  { 
     constructor(private timetableAuthService: TimetableAuthService) {}  
 
-    isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();  
+    isUserLoggedIn = this.timetableAuthService.isUserLoggedIn();
 }

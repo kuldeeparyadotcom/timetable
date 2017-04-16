@@ -1,7 +1,6 @@
 <div *ngIf=(isUserLoggedIn)>
     <form class="form-logout" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <button class="btn btn-lg btn-dnager btn-block" type="submit">Log Out!</button>
-        <hr>
+        <button class="btn btn-danger pull-right" type="submit">Log Out!</button>
         <!--<a [routerLink]="['/auth/signin']" class="btn btn-lg btn-danger" role="button" >Log Out!</a>-->
         <!--<a [routerLink]="['/signup']" class="btn btn-link" role="button">Not Registered?</a>-->
     </form>

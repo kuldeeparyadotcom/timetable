@@ -1,5 +1,5 @@
-<div class="row col-sm-12" *ngIf=(isUserLoggedIn)>
-    <div class="col-sm-7" style="background-color:white;">
+<div *ngIf=(isUserLoggedIn)>
+    <div style="background-color:white;">
         <article class="panel panel-default">
             <div class="panel-body" >
                 <form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">

@@ -1,9 +1,23 @@
 
 <!--<div class="col-sm-12" style="background-color:white;" *ngIf=(isUserLoggedIn)>-->
-<div class="col-sm-12" style="background-color:white;">
+
+<div class="row" style="background-color:white;">
+    <div class="col-sm-10">
+        <h2> 
+             {{ timetable_title }}
+         </h2>
+    </div>
+    <div class="col-sm-2">
+        <timetable-logout></timetable-logout>
+    </div>
+</div>
+<hr>
+
+
+<!--<div class="col-sm-12" style="background-color:white;">
     <h1> 
         {{ timetable_title }}
         <small> {{ timetable_subtitle }} </small>
         <hr>
     </h1>
-</div>
+</div>-->

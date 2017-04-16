@@ -1,10 +1,14 @@
-<timetable-logout></timetable-logout>
-<timetable-item-input></timetable-item-input>
-<div class="row col-sm-12" *ngIf=(isUserLoggedIn)>
+<timetable-title></timetable-title>
+
+<div class="row" *ngIf=(isUserLoggedIn)>
     <div class="col-sm-7" >
         <timetable-itemslist></timetable-itemslist>
+        <timetable-item-input></timetable-item-input>
     </div>
     <div class="col-sm-4 col-sm-offset-1">
         <timetable-tipslist></timetable-tipslist>
     </div>
+    <!--<div class="col-sm-1" >
+        <timetable-logout></timetable-logout>
+    </div>-->
 </div>
