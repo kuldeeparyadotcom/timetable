@@ -33,8 +33,11 @@ export class TimetableItemService {
             'Content-Type': 'application/json'
         });
 
+        const token = localStorage.getItem('token') 
+        ? '?token=' + localStorage.getItem('token') 
+        : '';
         //  return this.http.post('http://54.210.120.168:7018/timetableitem', body, {headers: headers})
-        return this.http.post(this.backend_server_url + 'timetableitem', body, {headers: headers})
+        return this.http.post(this.backend_server_url + 'timetableitem' + token, body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
                 const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
@@ -55,8 +58,12 @@ export class TimetableItemService {
             'Content-Type': 'application/json'
         });
 
+        const token = localStorage.getItem('token') 
+        ? '?token=' + localStorage.getItem('token') 
+        : '';
+
         //  return this.http.post('http://54.210.120.168:7018/timetableitem', body, {headers: headers})
-        return this.http.patch(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId, body, {headers: headers})
+        return this.http.patch(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId + token, body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
                 const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
@@ -69,7 +76,12 @@ export class TimetableItemService {
     getTimetableItems() {
         // return this.timetable_items;
         // return this.http.get('http://54.210.120.168:7018/timetableitems')
-        return this.http.get(this.backend_server_url + 'timetableitems')
+
+        const token = localStorage.getItem('token') 
+        ? '?token=' + localStorage.getItem('token') 
+        : '';
+
+        return this.http.get(this.backend_server_url + 'timetableitems' + token)
             .map((response: Response) => {
                 const timetableitems = response.json();
                 let transformedTimetableitems: TimetableItem[] = [];
@@ -87,7 +99,12 @@ export class TimetableItemService {
         this.timetable_items.splice(this.timetable_items.indexOf(timetableItem),1);
         //Remove from database as well
         // return this.http.delete('http://54.210.120.168:7018/timetableitem/' + timetableItem.timetableitemId)
-        return this.http.delete(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId)
+        
+        const token = localStorage.getItem('token') 
+        ? '?token=' + localStorage.getItem('token') 
+        : '';
+
+        return this.http.delete(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId + token)
         .map((response: Response) => response.json())
         .catch((error: Response) => Observable.throw(error.json()));
     }
