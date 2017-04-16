@@ -10,7 +10,7 @@
                                         id="start_time" 
                                         placeholder="00:00 AM" 
                                         class="form-control"
-                                        ngModel
+                                        [ngModel]="timetableItem?.start_time"
                                         name="start_time"
                                         required>
 
@@ -20,7 +20,7 @@
                                         id="end_time" 
                                         placeholder="00:00 AM" 
                                         class="form-control"
-                                        ngModel
+                                        [ngModel]="timetableItem?.end_time"
                                         name="end_time"
                                         required>
         
@@ -30,16 +30,25 @@
                                         id="description" 
                                         placeholder="Task Details" 
                                         class="form-control"
-                                        ngModel
+                                        [ngModel]="timetableItem?.description"
                                         name="description"
                                         required>
                     </div>
-                    <button 
-                        class="btn btn-primary pull-right" 
-                        type="submit"
-                        [disabled]="!f.valid">
-                        Save
-                    </button>
+                    <div>
+                        <button 
+                            class="btn btn-danger" 
+                            type="button"
+                            (click)="onClear(f)"
+                            [disabled]="!f.valid">
+                            Clear
+                        </button>
+                        <button 
+                            class="btn btn-primary" 
+                            type="submit"
+                            [disabled]="!f.valid">
+                            Save
+                        </button>
+                    </div>
                 </form>
                 </div>
         </article>

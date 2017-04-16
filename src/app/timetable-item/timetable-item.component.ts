@@ -32,7 +32,7 @@ export class TimetableItemComponent  {
 
     onEdit() {
         // alert("Edit Item");
-        this.editClicked.emit('A New Value');
+        this.timetableItemService.editTimetableItem(this.timetableItem);
     }
 
     onDelete() {

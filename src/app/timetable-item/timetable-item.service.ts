@@ -1,7 +1,7 @@
 import { TimetableItem } from "./timetable-item.model";
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -14,6 +14,7 @@ export class TimetableItemService {
     private backend_server_url = configuration.backend_server_url;
     private timetable_items: TimetableItem[] = [] //Empty array initially
     
+    timetableIsEdit = new EventEmitter<TimetableItem>();
 
     //Only for testing - add some items to array timetable_items
     // item1 = new TimetableItem("09:30 AM", "12:30 PM", "Polity", "bg-success");
@@ -38,6 +39,28 @@ export class TimetableItemService {
                 const result = response.json();
                 const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
                 this.timetable_items.push(timetableitem);
+                return timetableitem;
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
+
+    editTimetableItem(timetableItem: TimetableItem) {
+        this.timetableIsEdit.emit(timetableItem); 
+    }
+
+    updateTimetableItem(timetableItem: TimetableItem) {
+
+        const body = JSON.stringify(timetableItem);
+        const headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+
+        //  return this.http.post('http://54.210.120.168:7018/timetableitem', body, {headers: headers})
+        return this.http.patch(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId, body, {headers: headers})
+            .map((response: Response) => {
+                const result = response.json();
+                const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
+                // this.timetable_items.push(timetableitem);
                 return timetableitem;
             })
             .catch((error: Response) => Observable.throw(error.json()));
