@@ -6,10 +6,12 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { configuration } from '../timetable-config/timetable-configuration';
+
 @Injectable()
 export class TimetableItemService {
     
-    
+    private backend_server_url = configuration.backend_server_url;
     private timetable_items: TimetableItem[] = [] //Empty array initially
     
 
@@ -30,7 +32,8 @@ export class TimetableItemService {
             'Content-Type': 'application/json'
         });
 
-         return this.http.post('http://54.210.120.168:7018/timetableitem', body, {headers: headers})
+        //  return this.http.post('http://54.210.120.168:7018/timetableitem', body, {headers: headers})
+        return this.http.post(this.backend_server_url + 'timetableitem', body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
                 const timetableitem = new TimetableItem(result.obj.start_time, result.obj.end_time, result.obj.description, result.obj.status, result.obj._id);
@@ -42,7 +45,8 @@ export class TimetableItemService {
 
     getTimetableItems() {
         // return this.timetable_items;
-        return this.http.get('http://54.210.120.168:7018/timetableitems')
+        // return this.http.get('http://54.210.120.168:7018/timetableitems')
+        return this.http.get(this.backend_server_url + 'timetableitems')
             .map((response: Response) => {
                 const timetableitems = response.json();
                 let transformedTimetableitems: TimetableItem[] = [];
@@ -59,7 +63,8 @@ export class TimetableItemService {
     deleteTimetableItem(timetableItem: TimetableItem) {
         this.timetable_items.splice(this.timetable_items.indexOf(timetableItem),1);
         //Remove from database as well
-        return this.http.delete('http://54.210.120.168:7018/timetableitem/' + timetableItem.timetableitemId)
+        // return this.http.delete('http://54.210.120.168:7018/timetableitem/' + timetableItem.timetableitemId)
+        return this.http.delete(this.backend_server_url + 'timetableitem/' + timetableItem.timetableitemId)
         .map((response: Response) => response.json())
         .catch((error: Response) => Observable.throw(error.json()));
     }
