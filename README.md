@@ -47,3 +47,10 @@ https://brew.sh
 https://developer.android.com/studio/index.html#downloads
 https://github.com/unpkg/express-unpkg/issues/29
 
+Cordova iOS
+https://github.com/nodejs/node-gyp/issues/569
+https://cordova.apache.org/docs/en/3.3.0/guide/platforms/ios/
+https://cordova.apache.org/docs/en/latest/guide/platforms/ios/
+https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html
+https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW1
+https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html#//apple_ref/doc/uid/TP40012582-CH28-SW7
